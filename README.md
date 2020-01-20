@@ -2,6 +2,11 @@
 
 ## Project setup
 ```
+npm install vue-material --save
+npm install vue-router --save
+npm install axios --save
+npm install -D sass-loader
+npm install -D node-sass
 npm install
 ```
 
