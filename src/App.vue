@@ -5,10 +5,12 @@
     <md-app md-waterfall md-mode="fixed">
       <md-app-toolbar class="md-dense md-primary">
         <div class="md-toolbar-row">
-          <md-button class="md-icon-button" @click="menuVisible = !menuVisible">
+          <md-button class="md-icon-button" v-if="!isNotHome()" @click="menuVisible = !menuVisible">
             <md-icon>menu</md-icon>
           </md-button>
-
+          <md-button class="md-icon-button" v-if="isNotHome()" to="/">
+            <md-icon>arrow_back_ios</md-icon>
+          </md-button>
           <span class="md-title">My Title</span>
         </div>
       </md-app-toolbar>
@@ -62,7 +64,12 @@ export default {
   },
   data: () => ({
     menuVisible: false
-  })
+  }),
+  methods: {
+    isNotHome() {
+      return this.$router.history.current["path"] !== "/";
+    }
+  },
 }
 </script>
 
