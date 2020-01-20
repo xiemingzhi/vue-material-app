@@ -1,21 +1,17 @@
 <template>
-    <!-- <ion-content>
-      <ion-list>
-        <ion-item v-for="todo in todos" :key="todo.id">
-          <ion-label>{{todo.title}}</ion-label>
-        </ion-item>
-      </ion-list>
-
-      <ion-fab-button class="todo-fab" @click="addTodo">
-        <ion-icon name="add"></ion-icon>
-      </ion-fab-button>
-    </ion-content> -->
-  <div>
+  <div class="md-layout">
+    <div class="md-layout-item">
     <md-list>
       <md-list-item v-for="todo in todos" :key="todo.id">
         <span class="md-list-item-text">{{todo.title}}</span>
       </md-list-item>
-    </md-list>  
+    </md-list>
+    </div>  
+    <div class="md-layout-item">
+    <md-button class="md-fab md-fab-bottom-right md-primary" @click="addTodo">
+      <md-icon>add</md-icon>
+    </md-button>
+    </div>
   </div>
 </template>
 
